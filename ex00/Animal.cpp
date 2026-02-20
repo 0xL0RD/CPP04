@@ -6,14 +6,14 @@
 /*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:21:23 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:23:26 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/20 19:03:48 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 std::string	Animal::_class_name = "Animal";
-std::string	Animal::_sound = "undefined";
+std::string	Animal::_sound = "enjoy the silence";
 
 Animal::Animal(void)
 	:	_type("undefined")
@@ -59,7 +59,7 @@ std::string		Animal::getType(void) const
 void	Animal::makeSound(void) const
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "Sound: enjoy the silence"
+		<< this->_sound
 		<< std::endl;
 	return ;
 }

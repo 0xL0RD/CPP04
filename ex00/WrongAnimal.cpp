@@ -6,14 +6,14 @@
 /*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:21:23 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:31:16 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/20 19:02:05 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 std::string	WrongAnimal::_class_name = "WrongAnimal";
-std::string	WrongAnimal::_sound = "undefined";
+std::string	WrongAnimal::_sound = "wrong animal undefined";
 
 WrongAnimal::WrongAnimal(void)
 	:	_type("undefined")
@@ -59,7 +59,7 @@ std::string		WrongAnimal::getType(void) const
 void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "Sound: =/()$&(/(·&/@@#"
+		<< "Sound: " << this->_sound
 		<< std::endl;
 	return ;
 }
