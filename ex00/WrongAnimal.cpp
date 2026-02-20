@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:21:23 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:23:26 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/20 18:31:16 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-std::string	Animal::_class_name = "Animal";
-std::string	Animal::_sound = "undefined";
+std::string	WrongAnimal::_class_name = "WrongAnimal";
+std::string	WrongAnimal::_sound = "undefined";
 
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 	:	_type("undefined")
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
@@ -25,7 +25,7 @@ Animal::Animal(void)
 	return ;
 }
 
-Animal::Animal(const Animal	&other)
+WrongAnimal::WrongAnimal(const WrongAnimal	&other)
 {
 	*this = other;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
@@ -34,7 +34,7 @@ Animal::Animal(const Animal	&other)
 		<< std::endl;
 }
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Desconstructor"
@@ -42,7 +42,7 @@ Animal::~Animal(void)
 	return ;
 }
 
-Animal&	Animal::operator=(const Animal &other)
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &other)
 {
 	this->_type = other._type;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
@@ -51,15 +51,15 @@ Animal&	Animal::operator=(const Animal &other)
 	return (*this);
 }
 
-std::string		Animal::getType(void) const
+std::string		WrongAnimal::getType(void) const
 {
 	return (this->_type);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "Sound: enjoy the silence"
+		<< "Sound: =/()$&(/(·&/@@#"
 		<< std::endl;
 	return ;
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 09:21:23 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:23:26 by rubsanch         ###   ########.fr       */
+/*   Created: 2026/02/20 16:38:13 by rubsanch          #+#    #+#             */
+/*   Updated: 2026/02/20 19:00:35 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-std::string	Animal::_class_name = "Animal";
-std::string	Animal::_sound = "undefined";
+std::string	WrongCat::_class_name = "WrongCat";
+std::string	WrongCat::_sound = "@#½@ woem #@¬#";
 
-Animal::Animal(void)
-	:	_type("undefined")
+WrongCat::WrongCat(void)
 {
+	this->_type = this->_class_name;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Default constructor"
 		<< " type: " << this->_type
@@ -25,24 +25,24 @@ Animal::Animal(void)
 	return ;
 }
 
-Animal::Animal(const Animal	&other)
+WrongCat::WrongCat(const WrongCat &other)
 {
-	*this = other;
+	Animal	*a = this;
+	*a = other;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Copy constructor"
 		<< " type: " << this->_type
 		<< std::endl;
 }
 
-Animal::~Animal(void)
+WrongCat::~WrongCat(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Desconstructor"
 		<< std::endl;
-	return ;
 }
 
-Animal&	Animal::operator=(const Animal &other)
+WrongCat&	WrongCat::operator=(const WrongCat &other)
 {
 	this->_type = other._type;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
@@ -51,15 +51,11 @@ Animal&	Animal::operator=(const Animal &other)
 	return (*this);
 }
 
-std::string		Animal::getType(void) const
-{
-	return (this->_type);
-}
-
-void	Animal::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "Sound: enjoy the silence"
+		<< this->_sound
 		<< std::endl;
 	return ;
+
 }

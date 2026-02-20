@@ -1,9 +1,11 @@
-NAME = Polymorphism
-SRCS = main.cpp			Animal.cpp
-BUILD = ./BUILD/
-OBJS = $(addprefix $(BUILD), $(SRCS:%.cpp=%.o))
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
+NAME =		Polymorphism
+SRCS = 		main.cpp				Animal.cpp				Dog.cpp			\
+			Cat.cpp					WrongAnimal.cpp			WrongCat.cpp
+
+BUILD =		./BUILD/
+OBJS =		$(addprefix $(BUILD), $(SRCS:%.cpp=%.o))
+CXX =		c++
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98 -MMD -MP
 
 all: $(NAME)
 
@@ -24,8 +26,8 @@ fclean: clean
 
 re: fclean all
 
-run: $(OBJS)
-	./$(NAME)
+run: $(NAME)
+	./$<
 
 .PHONY: all clean fclean re run
 
