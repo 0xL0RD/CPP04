@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 11:50:06 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 12:11:48 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ int	main(void)
 		std::cout << "Dog2 Idea 11: " << d2.idea_get(11) << std::endl;
 		std::cout << "----------------" << std::endl;
 		std::cout << "Destructors:" << std::endl;
+	}
+	{
+		std::cout << "----------------" << std::endl;
+		Animal *ar[1];
+		ar[0] = new Dog();
+		ar[0]->makeSound();
+		delete ar[0];
 	}
 	return (0);
 }
