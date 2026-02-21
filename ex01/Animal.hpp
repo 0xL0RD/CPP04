@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 11:40:21 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:12:50 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ANIMAL_HPP
 
 # include <iostream>
-# include "Brain.hpp"
 
 class Animal
 {

@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:28:25 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:27:33 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:12:40 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -23,10 +24,15 @@ class Cat : public Animal
 		Cat(const Cat &other);
 		~Cat(void);
 
-		Cat&	operator=(const Cat &other);
-		void	makeSound(void) const;
+		Cat&			operator=(const Cat &other);
+
+		void			makeSound(void) const;
+		std::string		idea_get(unsigned int index) const;
+		int				idea_set(std::string idea, unsigned int index);
 
 	private:
+		Brain				*_brain;
+
 		static std::string	_class_name;
 		static std::string	_sound;
 };

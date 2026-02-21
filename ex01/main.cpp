@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 12:11:48 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:14:02 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ int	main(void)
 		std::cout << "----------------" << std::endl;
 		Animal *ar[1];
 		ar[0] = new Dog();
+		ar[0]->makeSound();
+		delete ar[0];
+	}
+	{
+		std::cout << "----------------" << std::endl;
+		Animal *ar[1];
+		ar[0] = new Cat();
 		ar[0]->makeSound();
 		delete ar[0];
 	}

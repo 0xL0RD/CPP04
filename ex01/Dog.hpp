@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:28:25 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 12:15:18 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:13:16 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
