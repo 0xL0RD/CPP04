@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 20:02:51 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 11:46:53 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:01:10 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Brain::Brain(const Brain &other)
 Brain::~Brain(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "Desconstructor"
+		<< "Destructor"
 		<< std::endl;
 }
 
@@ -47,6 +47,8 @@ Brain&	Brain::operator=(const Brain &other)
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "operator="
 		<< std::endl;
+	if (this == &other)
+		return (*this);
 	for (unsigned int i = 0; i < this->_max_ideas; i++)
 	{
 		if (i >= other._max_ideas)

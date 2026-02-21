@@ -6,7 +6,7 @@
 /*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:21:23 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 11:53:09 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:01:18 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ Animal::~Animal(void)
 
 Animal&	Animal::operator=(const Animal &other)
 {
+	if (this == &other)
+		return (*this);
 	this->_type = other._type;
 	/*
 	std::cout << "Brain this ->p: " << this->_brain << std::endl;
