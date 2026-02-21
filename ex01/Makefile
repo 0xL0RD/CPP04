@@ -1,11 +1,11 @@
-NAME =		Polymorphism
+NAME =		Brain
 SRCS = 		main.cpp				Animal.cpp				Dog.cpp			\
-			Cat.cpp					WrongAnimal.cpp			WrongCat.cpp
+			Cat.cpp					Brain.cpp
 
 BUILD =		./BUILD/
 OBJS =		$(addprefix $(BUILD), $(SRCS:%.cpp=%.o))
 CXX =		c++
-CXXFLAGS =	-Wall -Wextra -Werror -std=c++98 -MMD -MP
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98 -MMD -MP -g3
 
 all: $(NAME)
 
@@ -27,7 +27,7 @@ fclean: clean
 re: fclean all
 
 run: $(NAME)
-	./$<
+	valgrind --leak-check=full ./$<
 
 .PHONY: all clean fclean re run
 

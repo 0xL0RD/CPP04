@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 20:01:15 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 11:40:21 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Animal
 		std::string		_type;
 
 	private:
-		Brain	*brain;
 		static std::string	_class_name;
 		static std::string	_sound;
 };
