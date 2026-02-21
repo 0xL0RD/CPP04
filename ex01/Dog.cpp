@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:38:13 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 13:08:03 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 13:09:21 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ Dog::Dog(const Dog &other)
 		<< "Copy constructor"
 		<< " type: " << this->_type
 		<< std::endl;
-	//Animal *ptr = (Animal *) &other;
-	//*(Animal *) this = *ptr;		//TODO: how to do it the good way??
 	this->Animal::operator=(other);
 	this->_brain = new Brain(*other._brain);
 	return ;
@@ -45,7 +43,7 @@ Dog::~Dog(void)
 		<< "Destructor"
 		<< std::endl;
 	delete this->_brain;
-	this->_brain = NULL; //TODO: is this required?
+	this->_brain = NULL;
 }
 
 Dog&	Dog::operator=(const Dog &other)
@@ -53,9 +51,6 @@ Dog&	Dog::operator=(const Dog &other)
 	if (this == &other)
 		return (*this);
 	this->Animal::operator=(other);
-	//Animal *ptr = (Animal *) &other;
-	//const Animal *ptr = &other;
-	//*(Animal *) this = *ptr;		//TODO: how to do it the good way??
 	this->_brain = other._brain;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "operator=; type: " << this->_type 
