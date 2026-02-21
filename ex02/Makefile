@@ -1,4 +1,4 @@
-NAME =		Brain
+NAME =		Abstract
 SRCS = 		main.cpp				AAnimal.cpp				Dog.cpp			\
 			Cat.cpp					Brain.cpp
 
