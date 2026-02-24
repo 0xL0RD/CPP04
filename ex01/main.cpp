@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 15:00:05 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:35:13 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,32 @@ int	main(void)
 			std::cout << "Detroying " << ar[i]->getType() << std::endl;
 			delete ar[i];
 		}
+	}
+	{
+		Cat *c1 = new Cat();
+		Cat *c2 = new Cat(*c1);
+		(void) c2;
+		delete c1;
+		delete c2;
+	}
+	{
+		Cat c1;
+		Cat c2;
+		c1 = c2;
+	}
+	{
+		Cat holA;
+		holA.idea_set("HOLAAAAAA",0);
+		Cat jose;
+		jose.idea_set("adios",0);
+		holA = jose;
+	}
+	{
+		Dog holA;
+		holA.idea_set("HOLAAAAAA",0);
+		Dog jose;
+		jose.idea_set("adios",0);
+		holA = jose;
 	}
 	return (0);
 }
