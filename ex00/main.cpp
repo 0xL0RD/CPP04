@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:59:49 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 13:03:31 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "Cat.hpp"
 
 #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
 int	main(void)
 {
@@ -41,8 +42,12 @@ int	main(void)
 	}
 	{
 		std::cout << "----------------" << std::endl;
+		std::cout << "WrongCat" << std::endl;
 		WrongCat	cat;
 		cat.makeSound();
+		std::cout << std::endl;
+		WrongAnimal	*animal = new WrongCat();
+		animal->makeSound();
 	}
 	return (0);
 }

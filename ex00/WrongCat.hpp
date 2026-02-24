@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:28:25 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:59:39 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:54:57 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define WRONGCAT_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat(void);

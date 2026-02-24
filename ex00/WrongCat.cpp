@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:38:13 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 19:00:35 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:57:44 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ WrongCat::WrongCat(void)
 
 WrongCat::WrongCat(const WrongCat &other)
 {
-	Animal	*a = this;
+	WrongAnimal	*a = this;
 	*a = other;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Copy constructor"

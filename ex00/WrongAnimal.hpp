@@ -6,12 +6,12 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/20 18:31:37 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:57:14 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		WrongAnimal&	operator=(const WrongAnimal &other);
 
 		std::string		getType(void) const;
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 
 	protected:
 		std::string		_type;
