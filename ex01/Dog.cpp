@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:38:13 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 13:09:21 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:37:04 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ Dog::Dog(const Dog &other)
 
 Dog::~Dog(void)
 {
+	delete this->_brain;
+	this->_brain = NULL;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Destructor"
 		<< std::endl;
-	delete this->_brain;
-	this->_brain = NULL;
 }
 
 Dog&	Dog::operator=(const Dog &other)
@@ -51,7 +51,9 @@ Dog&	Dog::operator=(const Dog &other)
 	if (this == &other)
 		return (*this);
 	this->Animal::operator=(other);
-	this->_brain = other._brain;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
+	//*this->_brain = *other._brain;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "operator=; type: " << this->_type 
 		<< std::endl;

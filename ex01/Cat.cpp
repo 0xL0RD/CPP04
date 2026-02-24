@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:38:13 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 13:11:48 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:25:52 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ Cat::Cat(const Cat &other)
 
 Cat::~Cat(void)
 {
+	delete this->_brain;
+	this->_brain = NULL;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Destructor"
 		<< std::endl;
-	delete this->_brain;
-	this->_brain = NULL;
 }
 
 Cat&	Cat::operator=(const Cat &other)
@@ -51,7 +51,9 @@ Cat&	Cat::operator=(const Cat &other)
 	if (this == &other)
 		return (*this);
 	this->Animal::operator=(other);
-	this->_brain = other._brain;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
+	//*this->_brain = *other._brain;
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "operator=; type: " << this->_type 
 		<< std::endl;
