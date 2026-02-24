@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 15:59:23 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 13:59:44 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ int	main(void)
 	}
 	{
 		/*
-
 		// Abstract class --> does not compile
 		AAnimal *a = new AAnimal();
 		a->makeSound();
 		delete a;
-
 		*/
 	}
 	return (0);

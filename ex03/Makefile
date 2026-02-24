@@ -1,7 +1,7 @@
 NAME =		Materia
 SRCS = 		main.cpp			AMateria.cpp			Character.cpp		\
 			MateriaSource.cpp		\
-			Ice.cpp
+			Ice.cpp				Cure.cpp
 
 BUILD =		./BUILD/
 OBJS =		$(addprefix $(BUILD), $(SRCS:%.cpp=%.o))
