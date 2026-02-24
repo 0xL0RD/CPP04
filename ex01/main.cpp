@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/21 14:40:45 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:00:05 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 
 int	main(void)
 {
+	{
+		std::cout << "----------------" << std::endl;
+		std::cout << "SUBJECT MINI TEST" << std::endl;
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		delete j;//should not create a leak
+		delete i;
+	}
 	{
 		std::string	ideatmp;
 
