@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rubsanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 07:09:17 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 11:59:27 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:59:03 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
 
-std::string	Ice::_class_name = __FILE__;
-std::string	Ice::_class_type = "ice";
+std::string	Cure::_class_name = __FILE__;
+std::string	Cure::_class_type = "cure";
 
-Ice::Ice(void)
+Cure::Cure(void)
 	:	AMateria(_class_type)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
@@ -24,14 +24,14 @@ Ice::Ice(void)
 	return ;
 }
 
-Ice::Ice(const Ice &other)
+Cure::Cure(const Cure &other)
 	:	AMateria(other)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Default constructor" << " type: " << this->_type << std::endl;
 }
 
-Ice::~Ice(void)
+Cure::~Cure(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Destructor" << std::endl;
@@ -39,7 +39,7 @@ Ice::~Ice(void)
 }
 
 
-Ice& Ice::operator=(const Ice &other)
+Cure& Cure::operator=(const Cure &other)
 {
 	if (this == &other)
 		return (*this);
@@ -50,17 +50,17 @@ Ice& Ice::operator=(const Ice &other)
 }
 
 
-AMateria* Ice::clone(void) const
+AMateria* Cure::clone(void) const
 {
-	Ice	*new_ice = new Ice(*this);
+	Cure	*new_ice = new Cure(*this);
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "clone" << " Type: " << this->_type << std::endl;
 	return (new_ice);
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+		<< "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
 

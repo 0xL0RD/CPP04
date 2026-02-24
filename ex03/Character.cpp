@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 09:41:50 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 11:14:02 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:16:15 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ Character::~Character(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
 		<< "Default destructor" << " name: " << this->_name << std::endl;
-	std::cout << "History len: " << this->_history_len << std::endl;
 	for (size_t i = 0; i < this->_slot_len; i++)
 	{
 		delete this->_slot[i];
@@ -96,9 +95,8 @@ std::string const &Character::getName(void) const
 
 void Character::equip(AMateria* m)
 {
-	AMateria *found;
-
-	found = NULL;
+	if (m == NULL)
+		return ;
 	for (size_t i = 0; i < this->_slot_len; i++)
 	{
 		if (this->_slot[i] == m)

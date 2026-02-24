@@ -6,12 +6,11 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 08:29:44 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 11:48:09 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:07:41 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
-#include <stdio.h>
 
 std::string	MateriaSource::_class_name = __FILE__;
 
@@ -70,6 +69,11 @@ void MateriaSource::learnMateria(AMateria* materia)
 		return ;
 	for (i = 0; i < this->_materias_len; i++)
 	{
+		if (this->_materias[i] == materia)
+			return ;
+	}
+	for (i = 0; i < this->_materias_len; i++)
+	{
 		if (this->_materias[i] == NULL)
 			break ;
 	}
@@ -92,7 +96,6 @@ AMateria* MateriaSource::createMateria(const std::string &type)
 		if (this->_materias[i]->getType() == type)
 		{
 			new_materia = this->_materias[i]->clone();
-			std::cout << "createMateria p: " << new_materia << std::endl;
 			return (new_materia);
 		}
 	}
