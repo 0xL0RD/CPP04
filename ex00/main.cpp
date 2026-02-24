@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 13:03:31 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 15:42:51 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ int	main(void)
 		i->makeSound(); //will output the cat sound!
 		j->makeSound();
 		meta->makeSound();
+		delete meta;
+		delete j;
+		delete i;
 	}
 	{
 		std::cout << "----------------" << std::endl;
@@ -48,6 +51,7 @@ int	main(void)
 		std::cout << std::endl;
 		WrongAnimal	*animal = new WrongCat();
 		animal->makeSound();
+		delete animal;
 	}
 	return (0);
 }

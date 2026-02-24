@@ -27,7 +27,7 @@ fclean: clean
 re: fclean all
 
 run: $(NAME)
-	./$<
+	valgrind --leak-check=full ./$<
 
 .PHONY: all clean fclean re run
 
