@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 08:25:46 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 11:11:00 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:48:34 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main(void)
 		delete src;
 	}
 	*/
+	/*
 	{
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -61,6 +62,23 @@ int	main(void)
 		//delete tmp;
 		delete me;
 		delete src;
+	}
+	*/
+	/*
+	{
+		MateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		MateriaSource src2;
+		src2 = *src;
+		delete src;
+	}
+	*/
+	{
+		MateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		MateriaSource* src2 = new MateriaSource(*src);
+		delete src;
+		delete src2;
 	}
 	return (0);
 }

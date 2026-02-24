@@ -6,30 +6,36 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 08:29:44 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 10:53:04 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:48:09 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
+#include <stdio.h>
 
 std::string	MateriaSource::_class_name = __FILE__;
 
 MateriaSource::MateriaSource(void)
+	: _materias_len(MS_MATERIAS_LEN)
 {
-	this->_materias_len = MS_MATERIAS_LEN;
 	for (size_t i = 0; i < this->_materias_len; i++)
-	{
 		this->_materias[i] = NULL;
-	}
+}
+
+MateriaSource::MateriaSource(const MateriaSource &other)
+	: _materias_len(MS_MATERIAS_LEN)
+{
+	for (size_t i = 0; i < this->_materias_len; i++)
+		this->_materias[i] = NULL;
+	this->MateriaSource::operator=(other);
 }
 
 MateriaSource::~MateriaSource(void)
 {
 	std::cout << "[" << this->_class_name << "]" << "[" << __FUNCTION__ << "] "
-		<< "desctructor " << std::endl;
+		<< "desctructor" << std::endl;
 	for (size_t i = 0; i < this->_materias_len; i++)
 	{
-		std::cout << "destructor p: " << this->_materias[i] << std::endl;
 		delete this->_materias[i];
 		this->_materias[i] = NULL;
 	}
@@ -60,7 +66,6 @@ void MateriaSource::learnMateria(AMateria* materia)
 {
 	unsigned int	i;
 
-	std::cout << "learmateria p: " << materia << std::endl;
 	if (materia == NULL)
 		return ;
 	for (i = 0; i < this->_materias_len; i++)

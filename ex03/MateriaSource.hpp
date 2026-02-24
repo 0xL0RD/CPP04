@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 17:16:58 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 10:37:55 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/24 11:36:28 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource(void);
 		~MateriaSource(void);
+		MateriaSource(const MateriaSource &other);
 
 		MateriaSource& operator=(const MateriaSource &other);
 
@@ -32,7 +33,6 @@ class MateriaSource : public IMateriaSource
 		AMateria	*_materias[MS_MATERIAS_LEN];
 		size_t	_materias_len;
 
-		MateriaSource(const MateriaSource &other);
 		static std::string	_class_name;
 };
 
