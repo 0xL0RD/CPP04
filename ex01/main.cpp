@@ -6,7 +6,7 @@
 /*   By: rubsanch <rubsanch@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:11:42 by rubsanch          #+#    #+#             */
-/*   Updated: 2026/02/24 16:35:13 by rubsanch         ###   ########.fr       */
+/*   Updated: 2026/02/25 16:01:25 by rubsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int	main(void)
 		Dog holA;
 		holA.idea_set("HOLAAAAAA",0);
 		Dog jose;
-		jose.idea_set("adios",0);
+		jose.idea_set("adios",1);
 		holA = jose;
 	}
 	return (0);
